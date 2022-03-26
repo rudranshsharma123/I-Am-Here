@@ -16,6 +16,7 @@ function Post() {
 	const [price, setPrice] = useState("");
 	const [link, setLink] = useState("");
 	const [vidLink, setVidlink] = useState("");
+	const [postLink, setPostLink] = useState("");
 	useEffect(() => {
 		try {
 			toastySuccess("checking to see if you have already logged in");
@@ -30,22 +31,27 @@ function Post() {
 	}, []);
 	const postProfile = async () => {
 		toastySuccess("Posting your Profile on chain!");
+		let baseUri = "https://diamondapp.com/posts";
 		let url = link
 			? link
 			: "https://www.onetherapybrighton.com/wp-content/uploads/2017/11/cartoon-counselling-session-e1521493521159.jpg";
 		let vidUrl = vidLink
 			? vidLink
 			: "https://media.giphy.com/media/DJOv9iPyEIxAA/giphy.gif";
+		console.log(url, vidUrl);
 		const postReq = {
 			UpdaterPublicKeyBase58Check: publicKey,
 			BodyObj: {
-				Body: `Hello, I am ${name}, I am going to be a ${role} and I am good at ${skills}. A liitle about me will be ${bio}`,
+				Body: `Hello, I am ${name}, I am going to be a ${role} and I am good at ${skills}. A liitle about me will be ${bio} @Iamhere`,
 				VideoURLs: [vidLink],
 				ImageURLs: [url],
 			},
 		};
 		const res = await deso.posts.submitPost(postReq);
+		let finalLink = `${baseUri}/${res.PostHashHex}`;
+		setPostLink(finalLink);
 		console.log(res);
+		toastySuccess("Posted on chain...");
 		setBio("");
 		setName("");
 		setRole("");
@@ -137,6 +143,11 @@ function Post() {
 				draggable
 				pauseOnHover
 			/>
+			{postLink && (
+				<header>
+					<div className="right">{postLink}</div>
+				</header>
+			)}
 		</>
 	);
 }

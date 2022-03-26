@@ -52,7 +52,7 @@ function Navbar() {
 				<a href="/post">
 					<button className="cta-button mint-button"> Post your issues</button>
 				</a>
-				<a href="/profile">
+				<a href="/issues">
 					<button className="cta-button mint-button"> Post your Profile</button>
 				</a>
 				<a href="/feed">

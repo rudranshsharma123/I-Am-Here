@@ -7,6 +7,7 @@ import Login from "./views/login/Login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Feed from "./views/feed/Feed";
 import Post from "./views/post/Post";
+import PostIssues from "./views/PostIssues/PostIssues";
 
 ReactDOM.render(
 	<BrowserRouter>
@@ -14,6 +15,7 @@ ReactDOM.render(
 			<Route path="/" element={<Login />} />
 			<Route path="/mentor" element={<Feed />} />
 			<Route path="/post" element={<Post />} />
+			<Route path="/issues" element={<PostIssues />} />
 		</Routes>
 	</BrowserRouter>,
 	document.getElementById("root"),

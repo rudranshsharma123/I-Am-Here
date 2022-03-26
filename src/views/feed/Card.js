@@ -3,25 +3,25 @@ import React from "react";
 function Card({ name, image, description, price, onClickButton, post }) {
 	return (
 		<div>
-			<div class="wrapper">
-				<div class="overviewInfo">
-					<div class="actions"></div>
+			<div className="wrapper">
+				<div className="overviewInfo">
+					<div className="actions"></div>
 
-					<div class="productinfo">
-						<div class="grouptext">
+					<div className="productinfo">
+						<div className="grouptext">
 							<h3>My Role</h3>
 							<p>{post}</p>
 						</div>
-						<div class="grouptext">
+						<div className="grouptext">
 							<h3>Member Since</h3>
 							<p>Spring 2021</p>
 						</div>
-						<div class="grouptext">
+						<div className="grouptext">
 							<h3>PRICE</h3>
 							<p>{price}hour</p>
 						</div>
 
-						<div class="productImage">
+						<div className="productImage">
 							<img
 								src={image}
 								alt="product: ps5 controller image"
@@ -32,20 +32,20 @@ function Card({ name, image, description, price, onClickButton, post }) {
 					</div>
 				</div>
 
-				<div class="productSpecifications">
+				<div className="productSpecifications">
 					<h1> {name} </h1>
 					<p> {description} </p>
 
 					{/*  */}
 
-					<div class="checkoutButton">
-						<div class="priceTag">
+					<div className="checkoutButton">
+						<div className="priceTag">
 							<span>$</span>
 							{price} <span>/hour</span>
 						</div>
-						<button class="preorder" onClick={onClickButton}>
+						<button className="preorder" onClick={onClickButton}>
 							<p>Talk with me</p>
-							<div class="buttonaction">
+							<div className="buttonaction">
 								<svg
 									width="24"
 									height="24"
