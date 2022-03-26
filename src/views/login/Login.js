@@ -11,7 +11,9 @@ function Login() {
 	const [publicKey, setPublicKey] = useState("");
 	const deso = new Deso();
 	const request = 3;
-
+	const handleClick = () => {
+		navigate("/mentor");
+	};
 	const handlePage = () => {
 		navigate("/todo");
 	};
@@ -63,7 +65,7 @@ function Login() {
 				</button>
 				{publicKey !== "" && (
 					<>
-						<button className="cta-button mint-button">
+						<button className="cta-button mint-button" onClick={handleClick}>
 							You already have an account click me to proceed
 						</button>
 					</>

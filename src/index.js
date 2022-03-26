@@ -6,12 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import Login from "./views/login/Login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Feed from "./views/feed/Feed";
+import Post from "./views/post/Post";
 
 ReactDOM.render(
 	<BrowserRouter>
 		<Routes>
 			<Route path="/" element={<Login />} />
 			<Route path="/mentor" element={<Feed />} />
+			<Route path="/post" element={<Post />} />
 		</Routes>
 	</BrowserRouter>,
 	document.getElementById("root"),
