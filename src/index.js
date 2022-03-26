@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Feed from "./views/feed/Feed";
 import Post from "./views/post/Post";
 import PostIssues from "./views/PostIssues/PostIssues";
+import PostFeed from "./views/postFeed/PostFeed";
 
 ReactDOM.render(
 	<BrowserRouter>
@@ -16,6 +17,7 @@ ReactDOM.render(
 			<Route path="/mentor" element={<Feed />} />
 			<Route path="/post" element={<Post />} />
 			<Route path="/issues" element={<PostIssues />} />
+			<Route path="/feed" element={<PostFeed />} />
 		</Routes>
 	</BrowserRouter>,
 	document.getElementById("root"),

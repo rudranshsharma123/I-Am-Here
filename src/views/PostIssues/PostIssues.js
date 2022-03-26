@@ -39,7 +39,7 @@ function PostIssues() {
 		const postReq = {
 			UpdaterPublicKeyBase58Check: publicKey,
 			BodyObj: {
-				Body: `${post} @Iamhere`,
+				Body: `${post} y@Iamhere`,
 				VideoURLs: [vidLink],
 				ImageURLs: [url],
 			},
