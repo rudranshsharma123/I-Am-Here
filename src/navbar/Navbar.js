@@ -49,10 +49,10 @@ function Navbar() {
 				<a href="/mentor">
 					<button className="cta-button mint-button"> Find Someone</button>
 				</a>
-				<a href="/post">
+				<a href="/issues">
 					<button className="cta-button mint-button"> Post your issues</button>
 				</a>
-				<a href="/issues">
+				<a href="/post">
 					<button className="cta-button mint-button"> Post your Profile</button>
 				</a>
 				<a href="/feed">

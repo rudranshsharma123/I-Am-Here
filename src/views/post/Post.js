@@ -17,6 +17,7 @@ function Post() {
 	const [link, setLink] = useState("");
 	const [vidLink, setVidlink] = useState("");
 	const [postLink, setPostLink] = useState("");
+
 	useEffect(() => {
 		try {
 			toastySuccess("checking to see if you have already logged in");
@@ -42,7 +43,7 @@ function Post() {
 		const postReq = {
 			UpdaterPublicKeyBase58Check: publicKey,
 			BodyObj: {
-				Body: `Hello, I am ${name}, I am going to be a ${role} and I am good at ${skills}. A liitle about me will be ${bio} @Iamhere`,
+				Body: `Hello, I am ${name}, I am going to be a ${role} and I am good at ${skills}. I will be charging ${price} $/hr. A liitle about me will be ${bio} @Iamhere`,
 				VideoURLs: [vidLink],
 				ImageURLs: [url],
 			},

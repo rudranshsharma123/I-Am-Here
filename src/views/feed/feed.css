@@ -225,3 +225,35 @@ button.preorder {
     align-items: center;
     margin-top: 100px;
 }
+.modal {
+  font-size: 12px;
+  background-color: #ffffff;
+  color: black;
+  width: auto;
+  height: auto;
+}
+.modal > .header-m {
+  width: auto;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content-m {
+  width: auto;
+  padding: 10px 5px;
+}
+
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}

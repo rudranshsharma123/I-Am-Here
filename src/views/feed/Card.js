@@ -1,8 +1,14 @@
 import React from "react";
-
+import Popup from "reactjs-popup";
+import { useState } from "react";
+import { toastySuccess } from "../../toasts/toasts";
+import Deso from "deso-protocol";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Card({ name, image, description, price, onClickButton, post }) {
+	const [message, setMessage] = useState("");
 	return (
-		<div>
+		<div style={{ margin: "10px" }}>
 			<div className="wrapper">
 				<div className="overviewInfo">
 					<div className="actions"></div>
@@ -43,22 +49,65 @@ function Card({ name, image, description, price, onClickButton, post }) {
 							<span>$</span>
 							{price} <span>/hour</span>
 						</div>
-						<button className="preorder" onClick={onClickButton}>
-							<p>Talk with me</p>
-							<div className="buttonaction">
-								<svg
-									width="24"
-									height="24"
-									viewBox="0 0 24 24"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M23.0677 11.9929L18.818 7.75739L17.4061 9.17398L19.2415 11.0032L0.932469 11.0012L0.932251 13.0012L19.2369 13.0032L17.4155 14.8308L18.8321 16.2426L23.0677 11.9929Z"
-										fill="currentColor"
-									/>
-								</svg>
-							</div>
-						</button>
+						<Popup
+							trigger={
+								<button className="preorder" onClick={onClickButton}>
+									<p>Talk with me</p>
+									<div className="buttonaction">
+										<svg
+											width="24"
+											height="24"
+											viewBox="0 0 24 24"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M23.0677 11.9929L18.818 7.75739L17.4061 9.17398L19.2415 11.0032L0.932469 11.0012L0.932251 13.0012L19.2369 13.0032L17.4155 14.8308L18.8321 16.2426L23.0677 11.9929Z"
+												fill="currentColor"
+											/>
+										</svg>
+									</div>
+								</button>
+							}
+							modal>
+							{(close) => (
+								<div className="modal">
+									<button className="close" onClick={close}>
+										&times;
+									</button>
+									<div className="header-m"> Send the DM </div>
+									<div className="content-m">
+										<input
+											type="text"
+											placeholder="Your Message"
+											value={message}
+											onChange={(e) => {
+												setMessage(e.target.value);
+											}}
+										/>
+										<button
+											className="cta-button mint-button"
+											onClick={async () => {
+												await onClickButton(
+													"BC1YLhULJpt8KAd4NZheJngWeZEwDW988tRGfWWtv5gKfCSgJWXfgwb",
+													message,
+												);
+												setMessage("");
+											}}>
+											Send
+										</button>
+									</div>
+
+									<button
+										className="cta-button connect-wallet-button"
+										onClick={() => {
+											console.log("modal closed ");
+											close();
+										}}>
+										close modal
+									</button>
+								</div>
+							)}
+						</Popup>
 					</div>
 				</div>
 			</div>
