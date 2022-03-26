@@ -52,13 +52,15 @@ header{
 }
 
 .right{
-  display: flex;
+  /* position: absolute; */
   background: black;
   border-radius: 16px;
   padding: 12px 20px;
   height: 99%;
+  top: 100px;
   margin-right: 10%;
   margin-top: 10px;
+  float: right;
 }
 
 .content-container {

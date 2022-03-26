@@ -3,16 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Login from "./views/login/Login";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Feed from "./views/feed/Feed";
 
 ReactDOM.render(
 	<BrowserRouter>
 		<Routes>
 			<Route path="/" element={<Login />} />
-			{/* <Route path="/post" element={<App />} />
-
-			<Route path="/post" element={<Posting />} />
-			<Route path="/board" element={<Board />} />
-			<Route path="/feed" element={<Feed />} /> */}
+			<Route path="/mentor" element={<Feed />} />
 		</Routes>
 	</BrowserRouter>,
 	document.getElementById("root"),
