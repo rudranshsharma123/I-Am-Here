@@ -93,8 +93,10 @@ function Feed() {
 	}, []);
 	useEffect(() => {
 		getPosts(publicKey);
-		getPosts("BC1YLfyvnDiwb1PLjdB4KtLhCiDoaV4qZ1MUJs15tzdDAXe4LBtfs8x");
 	}, [publicKey]);
+	useEffect(() => {
+		getPosts("BC1YLfyvnDiwb1PLjdB4KtLhCiDoaV4qZ1MUJs15tzdDAXe4LBtfs8x");
+	}, []);
 	return (
 		<>
 			<Navbar />
