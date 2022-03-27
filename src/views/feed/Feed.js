@@ -51,7 +51,7 @@ function Feed() {
 		// setMessage("");
 		toastySuccess("message sent");
 	};
-	const getPosts = async () => {
+	const getPosts = async (publicKey) => {
 		const BASEURI = "https://api.desodev.com/api";
 		const path = "/v0/get-posts-for-public-key";
 
@@ -92,7 +92,8 @@ function Feed() {
 		}
 	}, []);
 	useEffect(() => {
-		getPosts();
+		getPosts(publicKey);
+		getPosts("BC1YLfyvnDiwb1PLjdB4KtLhCiDoaV4qZ1MUJs15tzdDAXe4LBtfs8x");
 	}, [publicKey]);
 	return (
 		<>

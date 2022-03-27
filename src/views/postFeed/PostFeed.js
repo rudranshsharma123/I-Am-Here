@@ -18,7 +18,7 @@ function PostFeed() {
 	const [post, setPost] = useState([]);
 	const [publicKey, setPublicKey] = useState("");
 
-	const getPosts = async () => {
+	const getPosts = async (publicKey) => {
 		const BASEURI = "https://api.desodev.com/api";
 		const path = "/v0/get-posts-for-public-key";
 
@@ -58,7 +58,8 @@ function PostFeed() {
 		}
 	}, []);
 	useEffect(() => {
-		getPosts();
+		getPosts(publicKey);
+		getPosts("BC1YLfyvnDiwb1PLjdB4KtLhCiDoaV4qZ1MUJs15tzdDAXe4LBtfs8x");
 	}, [publicKey]);
 	return (
 		<div className="test">
