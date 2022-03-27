@@ -43,7 +43,7 @@ function PostFeed() {
 			}
 		}
 		console.log(y);
-		setPost(y);
+		setPost((prev) => [...prev, ...y]);
 	};
 	useEffect(() => {
 		try {
